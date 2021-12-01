@@ -4,11 +4,11 @@ import { Product } from './product.entity';
 
 @EntityRepository(Product)
 export class ProductsRepository extends Repository<Product> {
-  public createProduct(createProductDto: CreateProductDto): Product {
+  public createProduct(createProductDto: CreateProductDto): Promise<Product> {
     const { name, description, price, features, inTheBox, type } =
       createProductDto;
 
-    return this.create({
+    return this.save({
       name,
       type,
       price,
