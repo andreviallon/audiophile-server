@@ -3,9 +3,10 @@ import { CreateProductDto } from './dto/createProductDto';
 import { Product } from './product.entity';
 import { ProductService } from './product.service';
 
-@Controller('product')
+@Controller('products')
 export class ProductController {
   constructor(private productService: ProductService) {}
+
   @Post()
   createTask(@Body() createProductDto: CreateProductDto): Promise<Product> {
     return this.productService.createProduct(createProductDto);
