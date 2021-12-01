@@ -5,7 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { configValidationSchema } from './config.schema';
-import { ProductModule } from './product/product.module';
+import { OrdersModule } from './order/orders.module';
+import { ProductsModule } from './product/products.module';
 
 @Module({
   imports: [
@@ -36,7 +37,8 @@ import { ProductModule } from './product/product.module';
       },
     }),
     AuthModule,
-    ProductModule,
+    ProductsModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
